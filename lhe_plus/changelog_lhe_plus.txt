@@ -1,0 +1,12 @@
+Check in date 3/17/2016
+Bitfile Timestamp
+2016/03/17  07:30:43
+
+rev 0x0d
+added missing connection for AES select to KBOX
+
+Check in date 10/13/22 (missed check in)
+Bitfile Timestamp
+2018/06/27	12:39:26
+rev 0x0e
+enabled bottom up on fb2

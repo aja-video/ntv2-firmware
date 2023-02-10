@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FactoryScript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" FactoryScriptVersion="1.0.3" Cancellable="true" Description="Configures a device based on project file" Required_Num_Devices="4">
+  <factoryDeviceScripts>
+    <FactoryDeviceScript Part_ID="UCD9240" Match_Any_Address="false" Address="65" Description="">
+      <Task_Groups>
+        <FactoryTaskGroup Name="Erase Data Flash">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Erase_Data_Flash" description="Erases data flash. This can be used to get your device back to it’s original unconfigured “factory” state." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="This task will send the device to ROM mode, erase data flash, optionally write the pflash checksum, &#xD;&#xA;            instruct the ROM to execute the program, and then wait for the device to come online." TaskType="PMBUS">
+              <Parameters>
+                <FactoryTaskArgument Name="write_pflash_checksum">
+                  <Value xsi:type="xsd:boolean">true</Value>
+                  <Description>Write program flash checksum?  If true on device restart the program will be executed. [Default: True]</Description>
+                  <Arg_Type>System.Boolean</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+                <FactoryTaskArgument Name="write_aa_pattern">
+                  <Value xsi:type="xsd:boolean">false</Value>
+                  <Description>write_aa_pattern?  If true an 0xAA pattern (and if false, an 0xFF pattern) will be written to data flash. [Default: False]</Description>
+                  <Arg_Type>System.Boolean</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+              </Parameters>
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+        <FactoryTaskGroup Name="Activity5">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Device_Reset" description="Resets the device via PMBus and waits a default amount of time." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="" TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+      </Task_Groups>
+    </FactoryDeviceScript>
+    <FactoryDeviceScript Part_ID="UCD9240" Match_Any_Address="false" Address="66" Description="">
+      <Task_Groups>
+        <FactoryTaskGroup Name="Erase Data Flash">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Erase_Data_Flash" description="Erases data flash. This can be used to get your device back to it’s original unconfigured “factory” state." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="This task will send the device to ROM mode, erase data flash, optionally write the pflash checksum, &#xD;&#xA;            instruct the ROM to execute the program, and then wait for the device to come online." TaskType="PMBUS">
+              <Parameters>
+                <FactoryTaskArgument Name="write_pflash_checksum">
+                  <Value xsi:type="xsd:boolean">true</Value>
+                  <Description>Write program flash checksum?  If true on device restart the program will be executed. [Default: True]</Description>
+                  <Arg_Type>System.Boolean</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+                <FactoryTaskArgument Name="write_aa_pattern">
+                  <Value xsi:type="xsd:boolean">false</Value>
+                  <Description>write_aa_pattern?  If true an 0xAA pattern (and if false, an 0xFF pattern) will be written to data flash. [Default: False]</Description>
+                  <Arg_Type>System.Boolean</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+              </Parameters>
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+        <FactoryTaskGroup Name="Activity6">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Device_Reset" description="Resets the device via PMBus and waits a default amount of time." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="" TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+      </Task_Groups>
+    </FactoryDeviceScript>
+    <FactoryDeviceScript Part_ID="UCD9240" Match_Any_Address="false" Address="65" Description="">
+      <Task_Groups>
+        <FactoryTaskGroup Name="Configure device">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Configure_and_Validate" description="Configure all parameters on device based on project file from Fusion Power Design GUI." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.15.0" Assembly_Version="1.2.15.0" Technical_Description="Takes project file and identifies the set of parameters to take from a project file based on the config_value.  There is also the option to store to the device after the configuration is completed.&#xD;&#xA;            A parameter check is done to compare which parameters differ between the device and project file.  A write is then done on those select differences.  &#xD;&#xA;            However if you set &lt;b&gt;force_write_of_all to true&lt;/b&gt; then it will write every parameter from the project file to the device." TaskType="PMBUS">
+              <Parameters>
+                <FactoryTaskArgument Name="file_location">
+                  <Value xsi:type="xsd:string">J:\Firmware\riker\riker_main_05_u62_pmb65.xml</Value>
+                  <Description>The project file that contains the device configuration desired.</Description>
+                  <Arg_Type>System.String</Arg_Type>
+                  <Input_Type>FILE</Input_Type>
+                </FactoryTaskArgument>
+                <FactoryTaskArgument Name="store_to_flash">
+                  <Value xsi:type="xsd:boolean">true</Value>
+                  <Description>Set to true to store the newly configured parameters to flash. [Default: True]</Description>
+                  <Arg_Type>System.Boolean</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+                <FactoryTaskArgument Name="device_choice">
+                  <Value xsi:type="ConfigValue">
+                    <Specific_Address>0</Specific_Address>
+                    <Config_Option>SAME_AS_DEVICE</Config_Option>
+                  </Value>
+                  <Description>Choose which device setting you want to use to locate device in project file.</Description>
+                  <Arg_Type>TIDP.Factory.CustomerTypes.ConfigValue</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+                <FactoryTaskArgument Name="force_write_of_all">
+                  <Value xsi:type="xsd:boolean">true</Value>
+                  <Description>Set to true if you want all project file parameters to be written to the device even if they are the same. [Default: False]</Description>
+                  <Arg_Type>System.Boolean</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+              </Parameters>
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+        <FactoryTaskGroup Name="Activity5">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Device_Reset" description="Resets the device via PMBus and waits a default amount of time." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="" TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+        <FactoryTaskGroup Name="Activity7">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Clear_Faults" description="Clears faults on device." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="Displays status in log before and after call to clear faults on device." TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+            <FactoryTask Task_Attribute_Name="Clear_Logged_Faults" description="Clears the logged faults on device as opposed to faults." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="" TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+        <FactoryTaskGroup Name="Activity5">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Device_Reset" description="Resets the device via PMBus and waits a default amount of time." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="" TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+      </Task_Groups>
+    </FactoryDeviceScript>
+    <FactoryDeviceScript Part_ID="UCD9240" Match_Any_Address="false" Address="66" Description="">
+      <Task_Groups>
+        <FactoryTaskGroup Name="Configure device">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Configure_and_Validate" description="Configure all parameters on device based on project file from Fusion Power Design GUI." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.15.0" Assembly_Version="1.2.15.0" Technical_Description="Takes project file and identifies the set of parameters to take from a project file based on the config_value.  There is also the option to store to the device after the configuration is completed.&#xD;&#xA;            A parameter check is done to compare which parameters differ between the device and project file.  A write is then done on those select differences.  &#xD;&#xA;            However if you set &lt;b&gt;force_write_of_all to true&lt;/b&gt; then it will write every parameter from the project file to the device." TaskType="PMBUS">
+              <Parameters>
+                <FactoryTaskArgument Name="file_location">
+                  <Value xsi:type="xsd:string">J:\Firmware\riker\riker_main_05_u65_pmb66.xml</Value>
+                  <Description>The project file that contains the device configuration desired.</Description>
+                  <Arg_Type>System.String</Arg_Type>
+                  <Input_Type>FILE</Input_Type>
+                </FactoryTaskArgument>
+                <FactoryTaskArgument Name="store_to_flash">
+                  <Value xsi:type="xsd:boolean">true</Value>
+                  <Description>Set to true to store the newly configured parameters to flash. [Default: True]</Description>
+                  <Arg_Type>System.Boolean</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+                <FactoryTaskArgument Name="device_choice">
+                  <Value xsi:type="ConfigValue">
+                    <Specific_Address>0</Specific_Address>
+                    <Config_Option>SAME_AS_DEVICE</Config_Option>
+                  </Value>
+                  <Description>Choose which device setting you want to use to locate device in project file.</Description>
+                  <Arg_Type>TIDP.Factory.CustomerTypes.ConfigValue</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+                <FactoryTaskArgument Name="force_write_of_all">
+                  <Value xsi:type="xsd:boolean">true</Value>
+                  <Description>Set to true if you want all project file parameters to be written to the device even if they are the same. [Default: False]</Description>
+                  <Arg_Type>System.Boolean</Arg_Type>
+                  <Input_Type>NORMAL</Input_Type>
+                </FactoryTaskArgument>
+              </Parameters>
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+        <FactoryTaskGroup Name="Activity6">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Device_Reset" description="Resets the device via PMBus and waits a default amount of time." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="" TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+        <FactoryTaskGroup Name="Activity8">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Clear_Faults" description="Clears faults on device." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="Displays status in log before and after call to clear faults on device." TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+            <FactoryTask Task_Attribute_Name="Clear_Logged_Faults" description="Clears the logged faults on device as opposed to faults." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="" TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+        <FactoryTaskGroup Name="Activity6">
+          <Tasks>
+            <FactoryTask Task_Attribute_Name="Device_Reset" description="Resets the device via PMBus and waits a default amount of time." NameSpace="TIDP.Factory.TaskLibrary" classType="Manufacturing" Assembly="TIDP.Factory.TaskLibrary" dependencies="" Version="1.0.0" Reason_For_Last_Update="" Assembly_File_Version="1.2.83.0" Assembly_Version="1.2.83.0" Technical_Description="" TaskType="PMBUS">
+              <Parameters />
+            </FactoryTask>
+          </Tasks>
+        </FactoryTaskGroup>
+      </Task_Groups>
+    </FactoryDeviceScript>
+  </factoryDeviceScripts>
+</FactoryScript>

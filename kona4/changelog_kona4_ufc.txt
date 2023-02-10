@@ -1,0 +1,118 @@
+Kona4 UFC Change log
+
+Checkin Date – June 21, 2017
+Compile time stamp – 20170620/00181602
+Bitfile time stamp - 20170620/00190851
+Rev 0x13
+
+Changed VITC for progressive formats to use FID bit in timecode to decide whether to insert VITC1 one or VITC2
+
+Checkin Date – May 03, 5, 2017
+Compile time stamp – 20170502/00152546
+Bitfile time stamp - 20170502/00161907
+Rev 0x12
+
+Fixed line shift in 2k30/60
+
+Checkin Date – Apr 5, 2017
+Compile time stamp – 20170405/00072808
+Bitfile time stamp - 20170405/00081924
+Rev 0x11
+
+Change read TAGs to 16 for performance
+
+Checkin Date – Jan 11, 2017
+Compile time stamp – 20170111/00134757
+Bitfile time stamp - 20170111/00144335
+Rev 0xf
+
+Fixed UART
+
+Checkin Date – Jan 11, 2017
+Compile time stamp – 20170110/00175447
+Bitfile time stamp - 20170110/00184204
+Rev 0xf
+
+Fixed Anc Extract Bug.
+Changed reset to UART 
+
+Checkin Date – Jan 9, 2017
+Compile time stamp – 20170109/00160842
+Bitfile time stamp - 20170109/00170004
+Rev 0xf
+
+Fixed UFC H Chroma Interpolator Bug
+
+Checkin Date – Jan 5, 2016
+Compile time stamp – 20170104/00180146
+Bitfile time stamp - 20170104/00185910
+Rev 0xf
+
+updated output timing window reset by adding a small window on reset 
+and then opening the window after the reference settles
+added audio power on reset to avoid hang in audio memory interface
+
+Checkin Date – Dec 28, 2016
+Compile time stamp – 20161228/00095531
+Bitfile time stamp - 20161228/00104238
+Rev 0xf
+
+Fixed UFC to output by fixing bug in output timing
+
+Checkin Date – Oct 21, 2016
+Compile time stamp – 20161220/00082523
+Bitfile time stamp - 20161220/00091332
+Rev 0xf
+
+reset HDMI output while re-centering output frame pulse timing widow (missing in last check in)
+Fixed HFR UHD/4k TSI HDMI out
+Made changes to tolerate reference jitter by the changes below
+opened up output frame pulse timing widow
+recenter output frame pulse window on reference changes and format/rate changes 
+Fixed anc insert bug that occurs when the first word (byte) of a new packet happens to fall on the last byte of a 64-bit memory word
+
+Checkin Date – Oct 12, 2015
+Compile time stamp – 20151012/00140231
+Bitfile time stamp - 20151012/00145850
+Rev 0xe
+
+Fixed true dual link out
+Fixed HDMI RGB10 to look for monitor 10 bit capability
+
+
+Checkin Date – Sept 3, 2015
+Compile time stamp – 20150903/00111438
+Bitfile time stamp - 20150903/00120652
+Rev 0x0D
+
+fixed bug in anc insert
+fixed RGB@HFR to CSC to out errors
+
+Checkin Date – August 26, 2015
+Compile time stamp – 20150826/00080347
+Bitfile time stamp - 20150826/00090043
+Rev 0x0D
+
+Fixed RGB level B
+
+Checkin Date – August 25, 2015
+Compile time stamp – 20150825/00075747
+Bitfile time stamp - 20150825/00084812
+Rev 0x0D
+
+Updated XPT connections
+fixed 2k YCbCR 10 bit dual pixel format
+added support for RGB/A 10/12 bit Level A
+
+Checkin Date – August 17, 2015
+Compile time stamp – 20150815/00101138
+Bitfile time stamp - 20150815/00110236
+Rev 0x0D
+
+Updated Register BAR to 16 Meg
+Added ANC Widgets
+
+
+
+
+

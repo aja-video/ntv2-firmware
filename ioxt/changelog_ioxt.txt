@@ -1,0 +1,29 @@
+Check In Date Aug 24, 2018
+Bitfile Timestamp
+2018/08/24 
+16:17:54
+
+rev 0x14
+
+Fixes analog audio levels 
+Updated embedder resets to prevent channel hopping
+
+Check In Date Aug 23, 2018
+Bitfile Timestamp
+2018/08/23 
+11:03:19
+
+rev 0x13
+
+Fixes analog audio out phase shift
+Switched SDI in video detect to stable 27 MHz clock from VCO to eliminate detect errors leading to excessive interrupts
+
+
+Check In Date 3/16/16
+Bitfile Timestamp
+2016/03/11 
+07:05:17
+
+rev 0x12
+
+Fixes LTC out by adding support for 25,24,23.98
