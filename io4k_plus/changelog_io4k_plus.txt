@@ -609,4 +609,31 @@ rev0x22
 Updated xref logic to improve SD xref lock
 updated SPI flash logic to support new flash devices
 
+02/09/23
+2023/02/09  14:06:53
+rev0x23
+updated SDI RX to avoid losing input on format switches
+added qualification on reset to audio capture to avoid reset when capture is enabled
 
+02/09/23
+2023/02/09  14:06:53
+rev0x23
+updated SDI RX to avoid losing input on format switches
+added qualification on reset to audio capture to avoid reset when capture is enabled
+
+02/10/23
+2023/02/10   18:27:36
+rev0x24
+updated SDI RX to fix SD that was broke in the previous check in.
+
+02/23/23
+2023/02/22   20:55:03
+rev0x24
+updated SDI RX to fix 12G that was broke in the previous check ins.
+
+03/06/2023
+2023/03/05 12:31:19
+rev 0x025
+Implemented LMH1983 circuit to generate clock27 for use when genlocked to analog reference input
+Added logic from Ha5-12G to generate 15,734 NTSC H from TMDS clock for when genlocked to HDMI input
+Added logic to drive genlock circuitry depending on what version of PCB is detected
