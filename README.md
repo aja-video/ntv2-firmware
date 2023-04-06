@@ -20,7 +20,10 @@ In another tab, navigate to https://engit.aja.com/help/user/ssh.md and follow th
 The following section contains basic instructions for updating files in the firmware git repo using the Tortoise Git application. This is intended for those hardware engineers on the team who primarily work on Windows and are accustomed an SVN workflow via Tortoise SVN.
 
 Download & Install Tortoise Git: https://tortoisegit.org/download/
-NOTE: When installing Tortoise Git, select "OpenSSH" instead of "TortoisePlink" on the in the "Authentication and credential store" page of the "First Start Wizard". This will allow Tortoise to use the default SSH keys located in your `%USERPROFILE%\.ssh` directory. This will only work on systems with OpenSSH installed. Windows 10 Professional and later should have OpenSSH installed by default.
+
+_NOTE: When installing Tortoise Git, select "OpenSSH" instead of "TortoisePlink" on the "Authentication and credential store" page of the "First Start Wizard"._
+
+_This will allow Tortoise to use the default SSH keys located in your `%USERPROFILE%\.ssh` directory. This will only work on systems with OpenSSH installed. Windows 10 Professional and later should have OpenSSH installed by default._
 
 ## Committing changes to existing files
 1. In Windows Explorer, navigate to the firmware git repo checkout directory.
