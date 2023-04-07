@@ -4,7 +4,7 @@ This is home of the NTV2 Classic Firmware project. This repo is intended to be u
 
 ## Getting Started (Windows)
 1. Download and install Git for Windows from https://gitforwindows.org/
-1. Download and install Git Large File Storage (LFS) for Windows from https://git-lfs.com/
+   - NOTE: Enable "LFS support" when stepping through the Git for Windows installer wizard.
 1. Open a command line and clone the firmware repo:
    ```
    > git clone git@engit.aja.com:sw/ntv2/firmware.git
