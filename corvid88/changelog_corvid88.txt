@@ -1,5 +1,10 @@
 Corvid 88 Change log
 
+Checkin Date – May 2, 2023
+Bitfile time stamp - 2023/05/01 	19:00:43
+rev 47
+added GTH-RX reset every output VB if no input detected
+
 Checkin Date – December 29, 2022
 Bitfile time stamp - 2022/12/29 	11:06:27
 rev 46
