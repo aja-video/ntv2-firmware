@@ -16,10 +16,10 @@ dir /s /b %IP_FIRMWARE_DIR%
 dir /s /b %SDK_DIR%
 
 REM Unzip all ip_firmware components
-for /f "delims=" %%f in ('dir /b /s *.zip') do (
+for /f "delims=" %%I in ('dir /b /s *.zip') do (
 	"C:\Program Files\7-Zip\7z.exe" x -o"%%~dpI" "%%I"
 	if not %ERRORLEVEL% == 0 (
-		echo Error unzipping %%f
+		echo Error unzipping %%I
 		exit 1
 	)
 )
