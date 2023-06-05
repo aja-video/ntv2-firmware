@@ -5,6 +5,7 @@ setlocal EnableDelayedExpansion
 set SELF_DIR=%~dp0
 set CHECKOUT_DIR=%SELF_DIR%..\..
 
+set FIRMWARE_DIR=%CHECKOUT_DIR%/firmware
 set IP_FIRMWARE_DIR=%CHECKOUT_DIR%\ip_firmware
 set SDK_DIR=%CHECKOUT_DIR%\oem_sdk
 
@@ -16,6 +17,7 @@ dir /s /b %IP_FIRMWARE_DIR%
 dir /s /b %SDK_DIR%
 
 REM Unzip all ip_firmware components
+chdir %IP_FIRMWARE_DIR%
 for /f "delims=" %%I in ('dir /b /s *.zip') do (
 	"C:\Program Files\7-Zip\7z.exe" x -o"%%~dpI" "%%I"
 	if not %ERRORLEVEL% == 0 (
