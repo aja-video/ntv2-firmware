@@ -3,10 +3,13 @@
 setlocal EnableDelayedExpansion
 
 set SELF_DIR=%~dp0
-set CHECKOUT_DIR=%SELF_DIR%..
+set CHECKOUT_DIR=%SELF_DIR%..\..
 
 set IP_FIRMWARE_DIR=%CHECKOUT_DIR%\ip_firmware
 set SDK_DIR=%CHECKOUT_DIR%\oem_sdk
+
+echo %IP_FIRMWARE_DIR%
+echo %SDK_DIR%
 
 REM Print artifact dependencies
 dir /s /b %IP_FIRMWARE_DIR%
