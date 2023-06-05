@@ -29,4 +29,5 @@ for /f "delims=" %%I in ('dir /b /s *.zip') do (
 dir /s /b %IP_FIRMWARE_DIR%
 
 REM Create all srecords files for each bitfile
-
+chdir %FIRMWARE_DIR%\utility_files
+call create_srecords.bat
