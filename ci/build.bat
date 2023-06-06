@@ -10,6 +10,9 @@ set IP_FIRMWARE_DIR=%CHECKOUT_DIR%\ip_firmware
 set SDK_DIR=%CHECKOUT_DIR%\oem_sdk
 set STAGING_DIR=%CHECKOUT_DIR%\staging
 
+REM Remove old staging dir
+rmdir /s /q %STAGING_DIR%
+
 mkdir %STAGING_DIR%
 mkdir %STAGING_DIR%\srecords
 
@@ -30,8 +33,13 @@ for /f "delims=" %%I in ('dir /b /s *.zip') do (
 dir /s /b %IP_FIRMWARE_DIR%
 
 REM Create all srecords files for each bitfile
+echo Create all srecord files for each bitfile
 chdir %FIRMWARE_DIR%\utility_files
 call create_srecords.bat
 
+dir /s /b 
+dir /s /b srecords
+
 REM Copy srecords and bitfiles to staging dir
+echo Copy srecords and bitfiles to staging dir
 xcopy /s /y %FIRMWARE_DIR%\utility_files\srecords %STAGING_DIR%\srecords
