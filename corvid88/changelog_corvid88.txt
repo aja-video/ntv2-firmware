@@ -1,5 +1,11 @@
 Corvid 88 Change log
 
+Checkin Date – June 6, 2023
+Bitfile time stamp - 2023/05/23   09:24:45
+rev 48
+synchronized GTH DRP reset 
+added GTH-RX timeout reset every half second if no input detected
+
 Checkin Date – May 15, 2023
 Bitfile time stamp - 2023/05/12 	17:18:59
 rev 48
