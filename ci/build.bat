@@ -5,14 +5,15 @@ setlocal EnableDelayedExpansion
 set SELF_DIR=%~dp0
 set CHECKOUT_DIR=%SELF_DIR%..\..
 
-set FIRMWARE_DIR=%CHECKOUT_DIR%/firmware
+set FIRMWARE_DIR=%CHECKOUT_DIR%\firmware
 set IP_FIRMWARE_DIR=%CHECKOUT_DIR%\ip_firmware
 set SDK_DIR=%CHECKOUT_DIR%\oem_sdk
+set STAGING_DIR=%CHECKOUT_DIR%\staging
 
-echo %IP_FIRMWARE_DIR%
-echo %SDK_DIR%
+mkdir %STAGING_DIR%
+mkdir %STAGING_DIR%\srecords
 
-REM Print artifact dependencies
+REM List artifact dependencies
 dir /s /b %IP_FIRMWARE_DIR%
 dir /s /b %SDK_DIR%
 
@@ -31,3 +32,6 @@ dir /s /b %IP_FIRMWARE_DIR%
 REM Create all srecords files for each bitfile
 chdir %FIRMWARE_DIR%\utility_files
 call create_srecords.bat
+
+REM Copy srecords and bitfiles to staging dir
+xcopy /s /y %FIRMWARE_DIR%\utility_files\srecords %STAGING_DIR%\srecords
