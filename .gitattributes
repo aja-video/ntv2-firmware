@@ -1,3 +1,8 @@
 *.bit filter=lfs diff=lfs merge=lfs -text
 *.srec filter=lfs diff=lfs merge=lfs -text
 *.xsa filter=lfs diff=lfs merge=lfs -text
+*.tcp filter=lfs diff=lfs merge=lfs -text
+*.tcs filter=lfs diff=lfs merge=lfs -text
+*.jed filter=lfs diff=lfs merge=lfs -text
+*.sof filter=lfs diff=lfs merge=lfs -text
+*.rbt filter=lfs diff=lfs merge=lfs -text
