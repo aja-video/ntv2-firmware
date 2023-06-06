@@ -22,10 +22,14 @@ if exist %STAGING_DIR% (
 
 mkdir %STAGING_DIR%
 mkdir %STAGING_DIR%\srecords
+mkdir %STAGING_DIR%\sdk
 
 REM List artifact dependencies
 dir /s /b %IP_FIRMWARE_DIR%
 dir /s /b %SDK_DIR%
+
+REM Unzip SDK to sdk directory
+xcopy /s /y %SDK_DIR%\ntv2sdk*.zip %STAGING_DIR%/sdk
 
 REM Unzip all ip_firmware components
 chdir %IP_FIRMWARE_DIR%
