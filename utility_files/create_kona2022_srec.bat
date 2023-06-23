@@ -1,7 +1,6 @@
 mkdir srecords
 
-set FIRMWARE_DIR=..\..\ip_firmware
-set KIP_DIR=%FIRMWARE_DIR%\kip-s2022
+set KIP_DIR=..\..\ip_firmware\kip-s2022
 
 powershell "(gc %KIP_DIR%\build7.h | Format-Hex | Select-Object -Expand Bytes | ForEach-Object { '{0:x2}' -f $_}) -join '' > %KIP_DIR%\build7.bin"
 .\bin2srec -q -s -a 4 %KIP_DIR%\s2022_56_4ch_rxtx.bit > .\srecords\konaIP_2022.rec
