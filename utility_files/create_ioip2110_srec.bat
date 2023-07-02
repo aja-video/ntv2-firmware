@@ -1,6 +1,6 @@
 mkdir srecords
 
-set IOIP_DIR=..\..\ip_firmware\ioip-s2110
+set IOIP_DIR=..\..\artifacts\ip_firmware\ioip-s2110
 
 powershell "type %IOIP_DIR%\build7.h | format-hex > %IOIP_DIR%\build7.bin"
 .\bin2srec -q -s -a 4 %IOIP_DIR%\ioip_s2110.bit > .\srecords\IoIP_2110_Main.rec

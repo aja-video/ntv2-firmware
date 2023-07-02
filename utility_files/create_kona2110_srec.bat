@@ -1,6 +1,6 @@
 mkdir srecords
 
-set KIP_DIR=..\..\ip_firmware\kip-s2110
+set KIP_DIR=..\..\artifacts\ip_firmware\kip-s2110
 
 powershell "(type %KIP_DIR%\build4.h | format-hex | Select-Object -Expand Bytes | ForEach-Object { '{0:x2}' -f $_ }) -join '' > %KIP_DIR%\build4.bin"
 .\bin2srec -q -s -a 4 %KIP_DIR%\s2110_4tx.bit > .\srecords\konaIP_2110.rec
