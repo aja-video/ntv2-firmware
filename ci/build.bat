@@ -31,6 +31,7 @@ mkdir %STAGING_DIR%
 mkdir %STAGING_DIR%\bin
 mkdir %STAGING_DIR%\ntv2diagnostics
 mkdir %STAGING_DIR%\mfgburner
+mkdir %STAGING_DIR%\scripts
 mkdir %STAGING_DIR%\srecords
 mkdir %STAGING_DIR%\zips
 
@@ -55,14 +56,17 @@ for /f "delims=" %%I in ('dir /b /s *.zip') do (
 
 dir /s /b %IP_FIRMWARE_DIR%
 
-REM REM Create all srecords files for each bitfile
-REM echo Create all srecord files for each bitfile
-REM chdir %FIRMWARE_DIR%\utility_files
-REM call create_srecords.bat
-REM 
-REM REM Copy srecords and bitfiles to staging dir
-REM echo Copy srecords and bitfiles to staging dir
-REM xcopy /s /y %FIRMWARE_DIR%\utility_files\srecords %STAGING_DIR%\srecords
+REM Create all srecords files for each bitfile
+echo Create all srecord files for each bitfile
+chdir %FIRMWARE_DIR%\utility_files
+call create_srecords.bat
+
+REM Copy srecords and bitfiles to staging dir
+echo Copy srecords and bitfiles to staging dir
+xcopy /s /y %FIRMWARE_DIR%\utility_files\srecords %STAGING_DIR%\srecords
+
+REM Copy all mfg scripts
+xcopy /s /y %FIRMWARE_DIR%\utility_files\scripts\* %STAGING_DIR%\scripts
 
 REM Unzip all SDK artifacts
 chdir %TEMP_DIR%
@@ -74,13 +78,14 @@ for /f "delims=" %%I in ('dir /b /s *.zip') do (
 	)
 )
 
+REM Copy sdk/bin dir
 for /f "delims=" %%d in ('dir /s /b /ad %TEMP_DIR%\ntv2sdk*') do (
 	echo sdk dir: %%d
 	xcopy /s /y %%d\bin\* %STAGING_DIR%\bin
 	REM dir /s /b "%%~nxd"
 )
 
-
+REM Copy mfgburner and ntv2diagnostics
 for /f "delims=" %%d in ('dir /s /b /ad %TEMP_DIR%\ntv2tools*') do (
 	echo tools dir: %%d
 	xcopy /s /y %%d\ntv2diagnostics\* %STAGING_DIR%\ntv2diagnostics
