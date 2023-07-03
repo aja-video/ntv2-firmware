@@ -9,11 +9,11 @@ REM Artifact dependencies from other builds in TeamCity
 set ARTIFACTS_DIR=%CHECKOUT_DIR%\artifacts
 set IP_FIRMWARE_DIR=%ARTIFACTS_DIR%\ip_firmware
 set SDK_DIR=%ARTIFACTS_DIR%\oem_sdk
+set RETAIL_DIR=%ARTIFACTS_DIR%\retail
 
 set FIRMWARE_DIR=%CHECKOUT_DIR%\firmware
 set STAGING_DIR=%CHECKOUT_DIR%\staging
 set TEMP_DIR=%CHECKOUT_DIR%\temp
-
 
 echo FIRMWARE_DIR: %FIRMWARE_DIR%
 echo IP_FIRMWARE_DIR: %IP_FIRMWARE_DIR%
@@ -96,3 +96,5 @@ for /f "delims=" %%d in ('dir /s /b /ad %TEMP_DIR%\ntv2tools*') do (
 xcopy /s /y %UNZIPPED_TOOLS_DIR%\ntv2diagnostics\* %STAGING_DIR%\ntv2diagnostics
 xcopy /s /y %UNZIPPED_TOOLS_DIR%\mfgburner\* %STAGING_DIR%\mfgburner
 
+REM Copy retail packages
+xcopy /s /y %RETAIL_DIR%\* %STAGING_DIR%
