@@ -1,6 +1,21 @@
+@echo off
+
 chdir /d ..\mfgburner
-mfgburner -k -w ..\srecords_16.2.5.2\ioip_s2110_A82_2022-10-22.mcs 
-mfgburner -f ..\srecords_16.2.5.2\ioip_2110_2021-04-12.bit
+
+for /f "delims=" %%d in ('dir /s /b /ad ..\srecords*') do (
+	set SRECORDS_DIR=%%d 
+)
+
+for /f "delims=" %%d in ('dir /s /b %SRECORDS_DIR%\ioip_s2110*.mcs') do (
+	set MCSFILE=%%d
+)
+
+for /f "delims=" %%d in ('dir /s /b %SRECORDS_DIR%\ioip_2110*.bit') do (
+	set BITFILE=%%d
+)
+
+mfgburner -k -w %MCSFILE%
+mfgburner -f %BITFILE%
 mfgburner -s
 pause
 

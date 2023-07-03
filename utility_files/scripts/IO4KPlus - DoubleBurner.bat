@@ -1,5 +1,16 @@
+@echo off
+
 chdir /d ..\mfgburner
-mfgburner -m ..\srecords_16.2.5.2\io4k_plus_2023-04-05.bit
-mfgburner -f ..\srecords_16.2.5.2\io4k_plus_2023-04-05.bit
+
+for /f "delims=" %%d in ('dir /s /b /ad ..\srecords*') do (
+	set SRECORDS_DIR=%%d 
+)
+
+for /f "delims=" %%d in ('dir /s /b %SRECORDS_DIR%\io4k_plus*.bit') do (
+	set BITFILE=%%d
+)
+
+mfgburner -m %BITFILE%
+mfgburner -f %BITFILE%
 mfgburner -s
 pause

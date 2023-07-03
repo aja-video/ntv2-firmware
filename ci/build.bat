@@ -81,13 +81,18 @@ for /f "delims=" %%I in ('dir /b /s *.zip') do (
 REM Copy sdk/bin dir
 for /f "delims=" %%d in ('dir /s /b /ad %TEMP_DIR%\ntv2sdk*') do (
 	echo sdk dir: %%d
-	xcopy /s /y %%d\bin\* %STAGING_DIR%\bin
-	REM dir /s /b "%%~nxd"
+	set UNZIPPED_SDK_DIR=%%d
 )
+
+xcopy /s /y %UNZIPPED_SDK_DIR%\bin\* %STAGING_DIR%\bin
+
 
 REM Copy mfgburner and ntv2diagnostics
 for /f "delims=" %%d in ('dir /s /b /ad %TEMP_DIR%\ntv2tools*') do (
 	echo tools dir: %%d
-	xcopy /s /y %%d\ntv2diagnostics\* %STAGING_DIR%\ntv2diagnostics
-	xcopy /s /y %%d\mfgburner\* %STAGING_DIR%\mfgburner
+	set UNZIPPED_TOOLS_DIR=%%d
 )
+
+xcopy /s /y %UNZIPPED_TOOLS_DIR%\ntv2diagnostics\* %STAGING_DIR%\ntv2diagnostics
+xcopy /s /y %UNZIPPED_TOOLS_DIR%\mfgburner\* %STAGING_DIR%\mfgburner
+
