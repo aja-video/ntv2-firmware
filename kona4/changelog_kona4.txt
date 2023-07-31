@@ -1,5 +1,12 @@
 Kona4 Quad Change log
 
+Checkin Date – 07/31/22
+Bitfile time stamp - 2023/07/27	09:24:38
+Rev 62
+updated XREF frame pulse detection to fix intermittent errors
+fixed key output limiting
+synchronized reset in SDI RX that could cause loss of input
+
 Checkin Date – 11/17/22
 2022/11/16 	11:16:02
 rev 0x61
