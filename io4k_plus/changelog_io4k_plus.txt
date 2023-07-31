@@ -637,3 +637,16 @@ rev 0x025
 Implemented LMH1983 circuit to generate clock27 for use when genlocked to analog reference input
 Added logic from Ha5-12G to generate 15,734 NTSC H from TMDS clock for when genlocked to HDMI input
 Added logic to drive genlock circuitry depending on what version of PCB is detected
+
+04/06/23
+2023/04/05 	22:47:52
+rev 0x025
+Changed XREF files back to support EL4511
+
+07/31/23
+2023/07/27  13:11:57
+rev 0x026
+fixed CSC key out limiting
+
+
+
