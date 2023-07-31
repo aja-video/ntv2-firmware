@@ -1,5 +1,12 @@
 Corvid 88 Change log
 
+Checkin Date – 07/31/22
+Bitfile time stamp - 2023/07/18 	12:02:02
+Rev 49
+updated XREF frame pulse detection to fix intermittent errors
+fixed key output limiting
+synchronized reset in SDI RX that could cause loss of input
+ 
 Checkin Date – June 6, 2023
 Bitfile time stamp - 2023/05/23   09:24:45
 rev 48
