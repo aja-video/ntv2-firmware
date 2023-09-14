@@ -73,4 +73,10 @@ IO-X3 Change log
     moved default MR address to use UHD FB 28-29
     made mv FB start number writeable
 
+09/14/23
+    2023/09/14 	14:16:39
+    rev0xc
+    tied audio engine5 control reg bit 31 to readback 1 for 4 Meg audio buffer size
+    
+
     
