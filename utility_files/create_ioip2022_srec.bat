@@ -1,7 +1,11 @@
 mkdir srecords
 
-set IOIP_DIR=..\..\artifacts\ip_firmware\ioip-s2022
-
+if exist %IP_FIRMWARE_DIR% (
+	set IOIP_DIR=%IP_FIRMWARE_DIR%\ioip-s2022
+) else (
+	set IOIP_DIR=..\ioip-s2022
+)
+echo IOIP_DIR: %IOIP_DIR%
 powershell "type %IOIP_DIR%\build7.h | format-hex > %IOIP_DIR%\build7.bin"
 .\bin2srec -q -s -a 4 %IOIP_DIR%\ioip_s2022.bit > .\srecords\IoIP_2022_Main.rec
 .\bin2srec -q -s -a 4 -o 2000000 %IOIP_DIR%\ioip_s2022.bit >> .\srecords\IoIP_2022_Main.rec
