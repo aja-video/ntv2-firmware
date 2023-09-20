@@ -78,5 +78,11 @@ IO-X3 Change log
     rev0xc
     tied audio engine5 control reg bit 31 to readback 1 for 4 Meg audio buffer size
     
+09/20/23
+    2023/09/19   	17:12:42
+    rev0xc
+    connected analog audio to system audio engine #5
+    changed SDI locked to mode locked of SDI core
+    
 
     
