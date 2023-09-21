@@ -84,5 +84,11 @@ IO-X3 Change log
     connected analog audio to system audio engine #5
     changed SDI locked to mode locked of SDI core
     
+09/21/23
+    2023/09/21   	16:31:19
+    rev0xc
+    changed SDI RX locked to mask rx data to avoid spurious TRS detect
+    
+    
 
     
