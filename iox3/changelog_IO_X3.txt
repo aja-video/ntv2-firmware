@@ -89,6 +89,13 @@ IO-X3 Change log
     rev0xc
     changed SDI RX locked to mask rx data to avoid spurious TRS detect
     
+09/28/23
+    2023/09/25   	10:18:49
+    rev0xc
+    changed SDI RX locked signal to what for valid format
+    
+    
+    
     
 
     
