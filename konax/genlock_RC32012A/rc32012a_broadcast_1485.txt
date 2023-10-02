@@ -2,7 +2,7 @@
 ########################################
 # SPI, OneByteAddresses
 # ClockMatrix (24.2)
-# 6/29/2023 6:59:58 AM
+# 10/2/2023 4:21:26 PM
 ########################################
 
 
@@ -74,7 +74,7 @@ Size: 0x3, Offset: 0x20, Data: 0x000000
 Size: 0x8, Offset: 0x23, Data: 0x0000000000000000
 Size: 0x3, Offset: 0x2C, Data: 0x000000
 Size: 0x7, Offset: 0x2F, Data: 0x03000004040000
-Size: 0x25, Offset: 0x36, Data: 0x00000000000A01000000000000000000000000000000000000000000000000000000000000
+Size: 0x25, Offset: 0x36, Data: 0x00000000000000000000000000000000000000000000000000000000000000000000000000
 Size: 0x10, Offset: 0x5B, Data: 0x00000000000000080800010000000000
 Size: 0x1, Offset: 0x6B, Data: 0x00
 Size: 0x4, Offset: 0x7C, Data: 0x00C41020
@@ -94,7 +94,7 @@ Size: 0x3B, Offset: 0x00, Data: 0x0000040000000000000000000000000000000000000000
 Size: 0x1F, Offset: 0x3B, Data: 0x200000000A0100002400000000000000000000000000000000000000000000
 Size: 0x1, Offset: 0x5A, Data: 0x00
 Size: 0x4, Offset: 0x7C, Data: 0x00C61020
-Size: 0x5, Offset: 0x00, Data: 0x000F000419
+Size: 0x5, Offset: 0x00, Data: 0x000F03040A
 Size: 0x2, Offset: 0x05, Data: 0x8000
 Size: 0x4, Offset: 0x07, Data: 0x00000000
 Size: 0x2, Offset: 0x0B, Data: 0x0000
@@ -292,7 +292,7 @@ Size: 0xD, Offset: 0x11, Data: 0x00000001050000020101000500
 Size: 0x2, Offset: 0x20, Data: 0x0400
 Size: 0x1, Offset: 0x22, Data: 0x00
 Size: 0x4, Offset: 0x23, Data: 0x00000000
-Size: 0x3, Offset: 0x27, Data: 0x000120
+Size: 0x3, Offset: 0x27, Data: 0x004120
 Size: 0x3, Offset: 0x2C, Data: 0x000000
 Size: 0x4, Offset: 0x2F, Data: 0x00000000
 Size: 0x4, Offset: 0x33, Data: 0x00000000
