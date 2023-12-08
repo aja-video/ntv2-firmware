@@ -94,6 +94,12 @@ IO-X3 Change log
     rev0xc
     changed SDI RX locked signal to what for valid format
     
+12/07/23
+    2023/12/07   	17:52:54
+    rev0xe
+    added SDI RX timeout reset(rev0x0d)
+    fixed tx enable mask added in previous release that cause no SD error on output 4.
+    
     
     
     
