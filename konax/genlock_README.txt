@@ -2,4 +2,4 @@ Use rclk.exe to make or update the .h file after you export a register settings 
 
 For example, run:
 
-   .\rclk.exe -t .\genlock_8A34045\8a34045_broadcast_1485.txt -o .\genlock_8A34045\ntv2gen2regs_8a34045.h
+   .\rclk.exe -t .\genlock_RC32012A\rc32012a_broadcast_1485.txt -o .\genlock_RC32012A\ntv2gen2regs_rc32012a.h
