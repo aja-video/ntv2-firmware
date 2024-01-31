@@ -648,5 +648,13 @@ Changed XREF files back to support EL4511
 rev 0x026
 fixed CSC key out limiting
 
+01/31/24
+2024/01/31	12:47:56
+rev 0x027
+moved ANC extract/insert into SDI i/o 
+updated 12G rate detect
+set VPID to 0 when not valid
+added audio copy suppress to output 3
+
 
 
