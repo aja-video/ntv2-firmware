@@ -1,38 +1,22 @@
-# firmware
 
-This is home of the NTV2 Classic Firmware project. This repo is intended to be used as a submodule in other repositories. When new bitfiles are checked in to this repo, the submodule hash of the firmware repo within any parent repositories should be updated as well. Please coordinate with the maintainers of other repositories using this repo to ensure that those repositories remain up to date.
+<p align="center">
+  <a href="https://www.aja.com/">
+    <img src="aja_logo.svg" alt="AJA Video Systems" width="33%"/>
+  </a>
+</p>
 
-## Getting Started (Windows)
-1. Download and install Git for Windows from https://gitforwindows.org/
-   - NOTE: Enable "LFS support" when stepping through the Git for Windows installer wizard.
-1. Open a command line and clone the firmware repo:
-   ```
-   > git clone git@engit.aja.com:sw/ntv2/firmware.git
+# NTV2 Firmware
 
-   ```
+## Overview 
+This is where you can find firmware files for AJA Video's NTV2-based devices.
 
-## Configuring SSH on GitLab
-An SSH key will need to be associated with your GitLab account, so that the firmware repo can be cloned onto a development system. Navigate to https://engit.aja.com/-/profile/keys. We will be entering a new or existing SSH key into the "Key" text area.
+Each device or model has its own folder that contains the bitfiles for flashing to said device. 
 
-In another tab, navigate to https://engit.aja.com/help/user/ssh.md and follow the instructions for retrieving an existing SSH key from the system, or generating a new key.
+Some devices have changelog text files and others do not. It's our goal to get a changelog file for all devices in the near future(tm).
 
-# Tortoise Git
-The following section contains basic instructions for updating files in the firmware git repo using the Tortoise Git application. This is intended for those hardware engineers on the team who primarily work on Windows and are accustomed an SVN workflow via Tortoise SVN.
+This repo will be updated with every MAJOR point release for [libajantv2](https://github.com/aja-video/libajantv2) / [NTV2 SDK](https://sdksupport.aja.com/).
 
-Download & Install Tortoise Git: https://tortoisegit.org/download/
+**This Repo is intended for advanced users and OEM use only if you are a standard retail user please update you device through our [ControlPanel](https://www.aja.com/products/aja-control-room) application!**
 
-_NOTE: When installing Tortoise Git, select "OpenSSH" instead of "TortoisePlink" on the "Authentication and credential store" page of the "First Start Wizard"._
+If you are a developer looking to get started with our products, consider enrolling in our [developer program](https://www.aja.com/developer/request).
 
-_This will allow Tortoise to use the default SSH keys located in your `%USERPROFILE%\.ssh` directory. This will only work on systems with OpenSSH installed. Windows 10 Professional and later should have OpenSSH installed by default._
-
-## Committing changes to existing files
-1. In Windows Explorer, navigate to the firmware git repo checkout directory.
-1. Copy any changed files into their locations in the repo.
-1. A red icon will appear in Windows Explorer over any changed files and directories. This is Tortoise Git's indicator of changed files.
-1. Select the changed files and directories, right click on them and select `Git Commit -> "branchname"`. NOTE: The default branch is named "main".
-1. Enter a commit message in the commit dialog and press the Commit button.
-
-## Adding new files
-1. Add new files to the firmware git repo.
-1. Navigate to location of the new files in Windows Explorer.
-1. Right click on the new files and/or directories and select `TortoiseGit -> Add`.
