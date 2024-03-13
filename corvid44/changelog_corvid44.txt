@@ -1,0 +1,317 @@
+Corvid 44 Change log
+
+Checkin Date – 07/31/22
+Bitfile time stamp - 2023/07/26 09:34:39
+Rev 2b
+updated XREF frame pulse detection to fix intermittent errors
+fixed key output limiting
+synchronized reset in SDI RX that could cause loss of input
+ 
+Checkin Date – 11/17/22
+Bitfile time stamp - 2022/11/16	09:38:56
+Rev 2a
+updated XREF frame pulse detection to fix intermittent errors
+
+Checkin Date – 3/15/21
+Bitfile time stamp - 20210315/00153238
+Rev 28
+Updates rp188 extract latching of VITC1/2 in HFR
+Adds routing CSC3_V -> MIX1_FGV,  CSC3_K -> MIX1_FGK
+
+Checkin Date – 3/31/20
+Bitfile time stamp - 20200331/00090307
+Rev 26
+Updates in output timing and limiting
+
+Checkin Date – Oct 15, 2019
+Bitfile time stamp - 20191015/00091502
+Rev 25
+added AV sync control bits
+
+Checkin Date – Aug 26, 2019
+Bitfile time stamp - 20190819/00213815
+Rev 23
+SDI out a->b update to fix 2kp60 issues
+Fixed force black on SDI when XPT set to 0
+Added MacPro PCIe workaround
+
+Checkin Date – May 17, 2019
+Compile time stamp – 20190517/00140439
+Bitfile time stamp - 20190517/00144424
+Rev 0x22
+added audio reset fix
+
+Checkin Date – Mar 21,2019
+Bitfile time stamp - 20190320/00193449
+Rev 0x21
+update to latest,  includes UHD/4k tsi upside down
+added rgb level a RX
+updated genlock to lock to 47/48 level a input
+
+
+Checkin Date – Nov 29, 2018
+Compile time stamp – 20181129/00091906
+Bitfile time stamp - 20181129/00100649
+Rev 0x20
+Fixes sdi out 2k audio issue
+
+
+Checkin Date – Nov 13, 2018
+Compile time stamp – 
+Bitfile time stamp - 20181109/00132740
+Rev 0x1f
+Fixes output delay for HFR Level B when using A/B switch on output
+
+Checkin Date – Apr 17, 2018
+Compile time stamp – 20180417/00102020
+Bitfile time stamp - 20180417/00113033
+Rev 0x1e
+
+Removed RGBA limiting in CSC 
+Changed SDI detect clock to 27 TCXO 
+
+Checkin Date – Feb 22, 2018
+Compile time stamp – 20180222/00093344
+Bitfile time stamp - 20180222/00095656
+Rev 0x1d
+
+Added XPT connections to capture CSC Key
+Fixed RGB Level A 2k1080p29/30 
+
+
+Checkin Date – June 20, 2017
+Compile time stamp – 20170619/00161933
+Bitfile time stamp - 20170619/00171533
+Rev 0x19
+
+Changed VITC for progressive formats to use FID bit in timecode to decide whether to insert VITC1 one or VITC2
+
+Checkin Date – May 04, 2017
+Compile time stamp – 20170503/00104000
+Bitfile time stamp - 20170503/00113543
+Rev 0x18
+
+Fixed line shift in 2k30/60
+
+Checkin Date – Jan 10, 2017
+Compile time stamp – 20161230/00132420
+Bitfile time stamp - 20161230/00141714
+Rev 0x16
+
+updated output timing window reset by adding a small window on reset 
+and then opening the window after the reference settles
+
+Checkin Date – Dec 21, 2016
+Compile time stamp – 20161220/00161317
+Bitfile time stamp - 20161220/00171232
+Rev 0x16
+
+added output timing reset when ever ref/rate/format change to recenter window
+disabled dedicated RP188 extract in an extract ( function in SDI RX)
+fixed bug in aligner used in CSC and TSI MUX 
+
+
+Checkin Date – Sept 23, 2016
+Compile time stamp – 20160920/00144906
+Bitfile time stamp - 20160920/00154614
+Rev 0x15
+
+added parameter to enable limiting in TRS insert used after CSC to correct errors - default off
+fixed anc insert bug in unpacker
+added aligner to CSC to support TSI inputs
+stretched 27 MHz FP to avoid missing
+
+
+Checkin Date – Feb 19, 2016
+Compile time stamp – 20160216/00151516
+Bitfile time stamp - 20160216/00160615
+Rev 0x14
+
+Fixed GBR
+Modified ANC Insert to save logic
+Fixed dual link 1 error
+Qualified UART reads to avoid conflicts with ANC reads
+
+
+
+Checkin Date – Jan 20, 2016
+Compile time stamp – 20160115/00154217
+Bitfile time stamp - 20160115/00163452
+Rev 0x12
+
+Fixed GC2 to follow GC1 in TSI mode
+
+Checkin Date – Jan 13, 2016
+Compile time stamp – 20160111/00095847
+Bitfile time stamp - 20160111/00104932
+Rev 0x11
+
+Fixed ANC Insert multi channel bug
+
+
+Checkin Date – Dec 21, 2015
+Compile time stamp – 20151221/00100752
+Bitfile time stamp - 20151221/00112809
+Rev 0x10
+
+Fixed anc insert to handle a full line
+
+Checkin Date – Dec 11, 2015
+Compile time stamp – 20151210/00143057
+Bitfile time stamp - 20151210/00152151
+Rev 0x0f
+
+added nonPCM detect per channel pair
+added audio mute during power up/down and rate change
+added MIX2 out to MIX1 in
+fixed FB -> CSC -> Mixer delay issue
+adjusted output timing to accomodate FB -> CSC -> MIX -> MIX -> SDI 
+zeroed SDI output timing relative to EXT REF 
+
+Checkin Date – Oct 12, 2015
+Compile time stamp – 20151006/00145930
+Bitfile time stamp - 20151006/00155406
+Rev 0x0e
+
+Fixed true dual link out
+
+
+Checkin Date – Sept 15, 2015
+Compile time stamp – 20150915/00155928
+Bitfile time stamp - 20150915/00165548
+Rev 0x0d
+
+Fixed eroor in FB2 global update
+Fixed bug in dual stream output 
+
+Checkin Date – Sept 3, 2015
+Compile time stamp – 20150903/00105035
+Bitfile time stamp - 20150903/00114553
+Rev 0x0d
+
+fixed RGB@HFR to CSC to out errors
+
+Checkin Date – Sept 1, 2015
+Compile time stamp – 20150901/00110417
+Bitfile time stamp - 20150901/00120100
+Rev 0x0d
+
+fixed CSC 3/4 alpha/key timing
+
+Checkin Date – August 31, 2015
+Compile time stamp – 20150831/00091712
+Bitfile time stamp - 20150831/00101441
+Rev 0x0d
+
+Updated SDI Status registers
+
+Checkin Date – August 25, 2015
+Compile time stamp – 20150824/00152337
+Bitfile time stamp - 20150824/00162138
+Rev 0x0d
+
+Updated XPT connections
+fixed 2k YCbCR 10 bit dual pixel format
+added support for RGB/A 10/12 bit Level A
+
+Checkin Date – August 17, 2015
+Compile time stamp – 20150814/00170045
+Bitfile time stamp - 20150814/00175856
+Rev 0x0d
+
+Updated Global Control Logic
+Updated SDI Status registers with latest requirements 
+
+Checkin Date – August 12, 2015
+Compile time stamp – 20150812/00112732
+Bitfile time stamp - 20150812/00145118
+Rev 0x0d
+
+Updated 425MUX to reduce delay
+fixed xpt bugs 
+
+Checkin Date – August 10, 2015
+Compile time stamp – 20150810/00114527
+Bitfile time stamp - 20150810/00123612
+Rev 0x0d
+
+Fixed SMPTE 352 mux
+Fixed Dual Pixel BGR error
+added XPT connection FB3/4 to OUT4a/b
+
+
+Checkin Date – August 4, 2015
+Compile time stamp – 20150804/00153026
+Bitfile time stamp - 20150804/00162456
+
+Fixed XPT error from MUX2a to LUT3
+
+Checkin Date – July 31, 2015
+Compile time stamp – 20150731/00144741
+Bitfile time stamp - 20150731/00153954
+
+Modified SDI Status register starting at reg 2048.  Removed per frame reference count
+and made free running reference count 64 bits.  Reserved 4 registers per channel for
+future use. KonaRegs updated to reflect changes. 
+
+Checkin Date – July 30, 2015
+Compile time stamp – 20150729/00212648
+Bitfile time stamp - 20150730/00064621
+
+Fixed 12 RGB limiting in dual link out
+Fixed SD audio bug in embedder that caused dropped sample on even SDI channels 
+
+Checkin Date – July 27, 2015
+Compile time stamp – 20150727/00111718
+Bitfile time stamp - 20150727/00123156
+
+Fixed typo that caused second c2s engine to be dropped from design
+
+Checkin Date – July 27, 2015
+Compile time stamp – 20150724/00165300
+Bitfile time stamp - 20150724/00174853
+
+Added XPT connections from MUX1/2 to SDI3/4 out
+Updated global control register logic to auto load in quad mode and 2pi
+Update uart1 to add variable rate
+Fixed missing parameter on c2s for second DMA engine that would cause errors in DVT in previous version
+fixed read back of rgb_range on ch1&2
+
+
+Checkin Date – July 9, 2015
+Compile time stamp – 20150708/00161319
+Bitfile time stamp - 20150708/00170331
+
+Changed crosspoint clock to 150 MHz to allow capturing channels running at different rates.
+
+Added missing dual pixel formats to support 4k/UHD in 425-3/5 mode (2pi).  The supported DP formats are listed below.
+	NTV2 dual pix_fmt for 10 bit YCbCr                
+	NTV2 dual pix_fmt for 8 bit YCbCr                 
+	NTV2 dual pix_fmt for 8 bit ARGB                  
+	NTV2 dual pix_fmt for 8 bit RGBA                  
+	NTV2 dual pix_fmt for 10 bit RGB                  
+	NTV2 dual pix_fmt for 8 bit YCbCr - YUY2          
+	NTV2 dual pix_fmt for 8 bit ABGR                  
+	NTV2 dual pix_fmt for 10 bit RGB - DPX big endian 
+	NTV2 dual pix_fmt for 10 bit YCbCr - DPX          
+	NTV2 dual pix_fmt for 8 bit RGB
+	NTV2 dual pix_fmt for 8 bit BRG
+	NTV2 dual pix_fmt for 10 bit RGB - DPX little endian
+	NTV2 dual pix_fmt for 10 bit YCbCr - DPX Fixed             
+              NTV2 dual pix_fmt for 10 bit YCbCr Two Plane Y/C pixel mode
+              NTV2 dual pix_fmt for 8 bit YCbCr Two Plane Y/C pixel mode
+
+Added compile time stamp in registers 88 (date) and 89 (time).  
+
+Added CPLD Rev to register 63 bits 1-0.  Original CPLD reads back as 3. Detailed in KonaRegs.txt
+
+Added CPLD Force Load bit to register 63 bit 8 that initiates an FPGA reload from Flash.  The card will fall off the PCIe bus when this bit is written.  A new CPLD revision is needed for this function.  The updated CPLD will read back as rev 0.
+
+Updated audio out to support up to 16 channels as defined by SMPTE .   
+
+Updated CSCs to support 4K/UHD two pixel interleaved.
+
+Added SDI status registers that start at register 2048.  Detailed in KonaRegs.txt
+
+Reduce PCIe TAGs to 8 from 16 to save space.  No observed DMA performance impact.
+

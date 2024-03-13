@@ -1,0 +1,84 @@
+IO4K Plus Change log
+
+01/09/2020
+CPLD bitfile T3Tap_cfg_spi4x.jed supports 
+    reads from SPI flash in x4 mode
+    Program FPGA in x8 mode (400mS from power up to FPGA done)
+    does not support tandem boot because that is not currently in the main FPGA
+FPGA bitfile T3_Tap.bit supports
+    PCIe G3 x 4 endpoint
+	PCI device ID = EB26
+	Board Type = 108790000
+	2 DMA Read Channel
+	2 DMA Write Channel
+	1 GByte DDR
+	SDI 1 out
+	1 8K frame buffer
+	1 4K CSC
+	2 Audio Engines
+	1 Quad link audio embedder
+	1 Dual Link output module
+	1 Quad Anc Inserter
+	1 Video Lut (that isn't hooked up correctly right now)
+    
+04/21/2020      
+    FPGA now works in all HDMI output formats from 525i to 4Kx2160p60
+    Embedded audio output working and plays out a test clip in 1920x1080p59.94 with embedded audio from ControlRoom
+    
+05/28/2020
+	HDMI audio working
+	headphone audio working
+	rotary encoder count can be read back by SW
+	LED bar graph works
+	power LED indicates link status
+
+06/18/2020
+	PCI tandem boot works with new CPLD, PCIe endpoint is ready 30mS after rising edge of PCIE_RESET#
+
+07/02/2020
+	Add audio mixer capable bit set to 1
+	corresponds to top level checkin #1499
+
+07/08/2020
+	update CPLD to load FPGA at power on, but requires change to reset timer cap to prevent errors with safeboot selection
+	Update FPGA to correct rotary encoder readback, preventing multiple increments when rotating knob by single detents
+
+07/14/2020
+	Added output gain stage to audio mixer for rotary encoder override
+09/14/2020
+	Updated to work with -R2 board
+	HDMI now uses FPGA internal IP
+	HDMI and SDI outputs working for majority of formats (no SD, no UHD/4K psf)
+9/17/2020
+	Embedded audio on SDI working
+9/18/2020
+	525 and 625 SDI work, still not working for HDMI
+9/23/2020
+	625 HDMI working, 525 almost working
+9/27/2020
+	525 and 625 working on SDI and HDMI
+9/29/2020
+	Corrected UHD output in RGB format
+10/3/2020
+	Audio clock now locks to video reference clock, previously always locked to 148.5MHz regaurdless of video rate
+10/6/2020
+	Checkin on 9/29 actually broke UHD SDI in all formats, now corrected.
+10/12/2020
+	Changed audio interrupts to be driven by second audio engine
+10/12/2020
+	Increase memory transaction speed to fix issues with playback at 4K60 using FCP
+10/26/2020
+	Make left and right output gain in the mixer module affect the output of all channels
+10/27/2020
+	add AES crosspoint in path to headphone output so that audio engine 1, engine 2, or mixer output can be routed to the headphones
+11/04/2020
+	create 12.288MHz audio clock which is locked to master video clock internally to FPGA to remove EOL PLL from BOM
+01/08/2021
+    correct some of the clock muxing that I did wrong in the last checkin, fixed HDMI SD outputs and numerous audio glitches
+02/21/2021
+    add connection to xpt so that LUT output can route to HDMI transmitter input
+03/03/2021
+    Jeff L's 12bit HDMI fix
+    add sixteen channel audio output level monitoring to audio mixer
+08/11/2021    
+    swap left and right channels going to the front LED display, they were reversed previously.

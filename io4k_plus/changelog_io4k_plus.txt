@@ -1,0 +1,660 @@
+IO4K Plus Change log
+
+6/8/2017
+CPLD bitfile config_spi4x.jed supports 
+    FPGA bitfiles larger than 16MB
+    programming of main or safeboot
+    reads from SPI flash in x4 mode
+    Program FPGA in x8 mode (400mS from power up to FPGA done)
+    does not support tandem boot because that is not currently in the main FPGA
+
+IO_FLINT.bit supports 
+    both memory banks
+    down convert
+    SDI on all 5 channels at rates up to 3G
+    5 video frame buffers and audio engines
+
+7/6/2017
+IO_FLINT.bit supports 
+    both memory banks
+    down convert
+    SDI on all 5 channels at rates up to 3G
+    SDI 6G/12G TX added to SDI out 3
+    4 video frame buffers and audio engines
+    5 CSC/LUTS
+    DLI/DLO on all SDI I/O
+    2 Mixers
+    LTC in and out
+    TSI mode for UHD/4K
+    
+7/6/2017 PM
+IO_FLINT.bit supports
+    fixes outputs broke in previos builds 
+    both memory banks
+    down convert
+    SDI on all 5 channels at rates up to 3G
+    SDI 6G/12G TX added to SDI out 3
+    4 video frame buffers and audio engines
+    5 CSC/LUTS
+    DLI/DLO on all SDI I/O
+    2 Mixers
+    LTC in and out
+    TSI mode for UHD/4K
+    UART
+    SDI Slew control
+    
+7/19/2017 PM   
+IO_FLINT.bit supports
+    initial 12G support (tx lightly tested,  rx not tested)
+    audio mixer and audio engine 5 added
+    
+7/21/2017 PM   
+IO_FLINT.bit supports
+    audio mixer - added mute bits to mixer inputs and outputs
+    fixed added routing for AVID uhd/4k
+    
+7/25/2017   
+IO_FLINT.bit 
+    added second DMA engine in both directions    
+    
+7/25/2017 PM  
+IO_FLINT.bit 
+   removed redundant buffers
+   fixed out 5 embed suppress bit.  
+   system monitor added (in previous version)
+   
+7/28/2017 PM  
+IO_FLINT.bit 
+   added anc insert/extract (untested)
+   moved 6g sdi out to ch3/4  
+   added audio in from front panel (Rob)
+   
+7/29/2017 PM  
+IO_FLINT.bit 
+   fixed RX vpid
+   fixed bug in 6G capture (capture not tested)
+
+7/31/2017 PM  
+IO_FLINT.bit 
+   The microphone level pot adjusts the input gain from minus infinity to +6 dB.
+   The three way slide switch adjusts the full scale max input from +24dBu for line to -6dBu for Mic and +48.
+   The headphone jack and headphone volume work, and the level meters do their flashing.
+   Verified the mic function by putting the device in loop through in the control panel,
+   and then manually overriding the audio input control register to select the microphone port.
+   Audio was then routed back out to the headphone jack and I could hear it without any noticeable noise.
+   That demonstrated that the mic audio is making into the audio engine correctly.
+    
+8/3/2017 
+IO_FLINT.bit 
+   fixed audio engine 5
+   fixed analog audio in sample rate from 24 to 48 kHz 
+   
+8/9/2017 
+IO_FLINT.bit 
+   added separate gain for L&R channels of aux inputs
+     
+8/14/2017 
+IO_FLINT.bit 
+   fixed 6g sdi genlock
+   added HDMI TX - not working properly, investigating
+     
+8/14/2017 
+IO_FLINT.bit 10:53:00
+   First compile for new R3 build with updated pin outs  
+   
+8/15/2017 
+IO_FLINT.bit 
+   correct ADC read logic, and straighten out connections to mic and headphone controls
+   fixed tmds clock in sd  
+   
+8/15/2017 
+10:43:33
+IO_FLINT.bit 
+   fixed HDMI out
+   
+8/16/2017 
+IO_FLINT.bit 
+   fixed TRS insertion in CSC output to fix HDMI RGB out.
+   
+8/21/2017 
+IO_FLINT.bit 
+   fixed UART
+   fixed HDMI 2.2 Rx/Tx
+   added SPI interface for Genlock Programming
+   
+8/23/2017     
+IO_FLINT.bit 
+   added mixer 3/4
+   added "AVID" 4k/uhd crosspint connections
+   added FB rd/wr buffer shadow readbacks
+    
+8/24/2017     
+IO_FLINT.bit 
+   fixed rp188 out on ch3
+   fixed 12g in genlock ( fixes 12G e2e)
+   added HDMI audio in (crackling)
+   
+8/25/2017     
+IO_FLINT.bit 
+   added E2E connections for 12g passthrough,  verified path
+      in1a to out1a   
+      in2a to out2a   
+      in3a to out3a   
+      in4a to out4a  
+      
+8/29/2017 am    
+IO_FLINT.bit 
+   removed audio reset on system audio engine (aud5)    
+   removed reset to external reference detect
+   added aligner to HDMI out to fix UHD/4k out 
+   
+8/29/2017 pm    
+IO_FLINT.bit 
+   added bidirectional analog audio control
+   updated pot initialization
+   
+8/30/2017 am   (bitfile date 20170829) 
+IO_FLINT.bit 
+   Fixed HDMI audio in
+   
+9/05/2017  
+IO_FLINT.bit 
+   Fixes CSC YC->RGB (this fixes scaler output to SDI 5)
+   
+9/07/2017  
+IO_FLINT.bit 
+   added SERDES reset logic for genlock (genlock working with updated driver)
+   added pot initialization fix
+   added fix to mute HDMI audio in ch3-8 when in 2 channel mode
+   
+   
+9/07/2017  
+IO_FLINT.bit PM
+      Fixed HDMI SERDES reset so genlock to HDMI in works
+      
+9/07/2017  
+IO_FLINT.bit After 6PM
+      added DMA debug values to reg 48
+      
+9/08/2017  
+IO_FLINT.bit 
+      implemented DMA lockup fix
+      
+      
+9/12/2017  
+IO_FLINT.bit 
+      restored SDI IN2
+      
+9/13/2017  
+IO_FLINT.bit 
+      removed reset to audio memory access to fix lockup
+      added embedder reset when genlock re-locks
+      
+9/18/2017  
+IO_FLINT.bit 
+      added Psf to P converter in HDMI HD path 
+      
+9/21/2017  
+IO_FLINT.bit 
+      added HDMI frame pulse,  fixes HDMI in the SDI out e2e
+      set firmware rev to 00
+      
+9/22/2017  
+IO_FLINT.bit 
+      increased sample rate converter clock to clean up HDMI audio in
+      
+9/25/2017  
+IO_FLINT.bit 
+      added/fixed xpt connections for HDMI UHD/4k capture (TSI)
+      added xpt connections for HDMI IN UHD/4k e2e to HDMI OUT
+      
+10/3/2017  
+IO_FLINT.bit 
+   updated HDMI audio in to fix dropouts
+   
+10/5/2017  
+IO_FLINT.bit 
+   updated HDMI audio to work at 48 KHz with SRC bypassed
+   
+      
+10/13/2017  
+IO_FLINT.bit 
+   Improved HDMI SD performance
+   Fixed HDMI out Audio channel select in 2 channel mode
+   Added audio ch 3/4 swap on HDMI out 
+   
+      
+10/16/2017  
+IO_FLINT.bit 
+   Added audio ch 3/4 swap on HDMI in
+   Defaulted HDMI ch 3/4 swap to enabled on input and output
+   
+10/19/2017  
+IO_FLINT.bit 
+   change to the headphone volume pot
+   change to HDMI in DRU to improve SD performance 
+   
+10/26/2017  
+IO_FLINT.bit 
+   update HDMI SD in (working now,  needs Dave S driver updates)
+   updated EDID and SCDC files
+   
+10/31/2017  
+IO_FLINT.bit 
+   added xpt connections
+   updated HDMI timing constraints
+   
+11/3/2017  
+IO_FLINT.bit 
+   modified HDMI TX SERDES config to avoid errant configuration
+   changed HDMI audio out status to professional
+   
+11/3/2017  PM
+IO_FLINT.bit 
+   reverted HDMI config changes that broke HDMI
+   added xpt connections
+   changed HDMI audio out status to professional
+   
+11/6/2017
+   io4kp.bit 
+   changed bitfile name - no functional changes
+   
+11/8/2017
+   io4kp.bit 
+   updated anc with SD changes 
+   fixed drt in TSI mode (needs verification)
+   synchronized HDMI TX rate changes to once a frame
+   added debug register to HDMI TX
+   
+      
+11/11/2017
+   io4kp.bit 
+   fixed HDMI audio clock to support SRC at 32,44.1,48,96 KHz input rates
+   
+11/17/2017
+   io4kp.bit 
+   fixed missing in4a-c xpt from sdi in to HDMI out
+   
+11/21/2017
+   io4kp.bit 
+   added avid tsi 4-wire routes
+   
+11/21/2017 
+   io4kp.bit 
+   fixed Psf2p on HDMI, broke when drt in TSI mode was fixed
+   
+12/08/2017 
+   io4kp.bit 
+   updated HDMI out arc packets to fix audio on 1.4 monitors
+   updated audio status bits - back to consumer
+   
+12/11/2017 
+   io4kp.bit 
+   modified HDMI input detect in an attempt to improve SD detection
+   
+12/13/2017 
+   io4kp.bit 
+   modified HDMI aux packet timing to fix issues seen in older monitors
+   
+12/29/2017 
+   io4kp.bit 
+   bypass HDMI TX buffer to remove lane to lane skew causing older monitors to fail
+    
+01/8/2018 
+   io4kp.bit 
+   added analog anc extraction for SD
+   added timeout in HDMI TX reconfig statemachine to avoid hangs   
+   
+03/07/2018
+   io4kp.bit
+   enable fan speed control, up to this point fans have been running full blast
+   enable Gen 1 and Gen 2 of DNxIV microphone input, which is used is determined by the PCB ID strap resistors.
+   limit maximum microphone gain to 56, preventing values above 100% to lower noise  
+
+03/9/2018 
+   io4kp.bit 03/08/2018
+   rev 1
+   fixed missing video clock during reference changes
+   added fan control
+   
+   
+03/12/2018 
+   io4kp.bit 03/12/2018
+   rev 3
+   updated HDMI EDID
+   Chngesnges from last checked-in EDID (11/30/17) are notably:
+Block 0:
+  Vendor/Product Info back to year + week of manufacture
+  Range Limits updated (max H-rate now 136kHz)
+Block 1:
+  Video data SVDs re-sorted
+  Colorimetry data block added
+  YCbCr 4:2:0 Video Data data block removed
+  YCbCr 4:2:0 Capability Map added
+  Video capability data block added
+  DTD 1 updated for 2048x2160p24
+   
+   
+05/02/2018 
+   io4kp.bit 05/02/2018
+   rev 4
+   added in 6/12G TX sync bit
+   
+05/03/2018
+   io4kp.bit 05/03/2018
+   forced test point to always be high, so that Avid's "Silent Mode" fan control is never triggered (see ECO 7562 rework instruction #2)
+   no other changes
+   
+05/14/2018 
+   io4kp.bit 05/14/2018
+   rev 5
+   adding connections for 12G output from FS3/4->MUX3/4->OUT1-4
+   
+    
+05/15/2018
+   io4kp.bit 05/14/2018 17:46:39
+    correct metastability in microphone volume pot
+    only allow mic pre-amp to increase or decrease gain by a single dB step to prvent popping when knob is quickly rotated.     
+
+06/12/2018
+   io4kp.bit 06/12/2018 16:53:53
+    reduce zipper noise in headphone output when volume is adjusted
+ 
+06/26/2018
+   io4kp.bit 06/21/2018 17:42:35
+   increase length of audio averaging time for audio meters and give meters 0.5dB of hysteresis to correct bug 14905
+
+7/17/18
+  io4k.bit  07/12/2018 18:57:20
+  rev 6
+  added write to edid BRAM
+  
+10/26/18
+io4k.bit 2018/10/26   15:28:37  
+rev 7
+fixes interlaced formats on HDMI RX
+fixes NTSC alignment on HDMI TX
+fixes EDID read error on HDMI RX that caused input to switch to DVI   
+
+11/7/18
+io4k.bit 2018/11/07  12:52:43 
+rev 8
+fixes HDMI RX frame pulse to fix hdmi to SDI pass through
+
+11/13/18
+io4k.bit 2018/11/09  13:51:07 
+rev 9
+Fixes output delay for HFR Level B when using A/B switch on output
+
+11/28/18
+io4k.bit 2018/11/27  16:42:27 
+rev b
+Fixes audio 2k bug
+fixes CSC5-K xpt error
+
+12/5/18
+io4k.bit 2018/12/04  18:55:38 
+rev b
+fixed TSI bottom up FB mode
+
+12/19/18
+io4k.bit 2018/12/19  16:03:55 
+rev c
+fixed TC bypass
+fixed 47/48 level B TX
+fixed analog audio phase shift
+insert VPID in y&c for HD/6g/12g 
+fixed audio packetizer sample order when two samples on a line
+duplicated audio on links 2/3/4 in 6g/12g
+set bit in VPID byte4 to indicate duplicate audio data on links 2/3/4
+updated 6g muxing to allow HD out channel 4 when in 6g
+
+01/04/19
+io4k.bit 2019/01/04  16:27:58
+rev d
+adds RGB Level A to the SDI RX
+
+01/07/19
+io4k.bit 2019/01/04  19:54:28  16:27:58
+rev d
+fixes cut and paste error introduced in DLI2/3/4 in last build
+
+01/22/19
+io4k.bit 2019/01/17  19:36:17
+rev d
+fixes 2k29/30 to HD audio bug 
+fixes 6G capture
+
+01/29/19
+io4k.bit 2019/01/28  19:55:19
+rev d
+remove audio copy setting in VPID 
+add xpt routes fb1 to DLO 3/4 
+
+01/31/19
+io4kp.bit 2019/01/31 15:15:02
+rev d
+fixes 12G RX UHD RGB Level A&B
+
+02/19/19
+io4kp.bit 2019/02/15 23:35:42
+rev d
+fixes genlock issue with rx of dual stream/level b inputs
+
+02/19/19
+io4kp.bit 2019/02/19 12:48:26
+rev d
+fixes timing error in compile
+no logic changes
+
+02/22/19
+2019/02/21  17:44:30
+rev d
+added ddr reset on warm boot to fix restart memory shift 
+
+05/21/19
+2019/05/20 	20:28:01
+rev f
+added EQ reset command on power up
+
+06/18/19
+2019/06/18 	10:54:08
+rev 0x10
+added HDMI tx PLL reset at power on to fix HDMI TX failure 
+
+07/30/19
+2019/07/30 	12:01:00
+rev 0x11
+change HDMI RX re-timer to I2C control and boosted output swing to fix glitching on SD capture
+added SDI eq adjustment to fix SDI output on mezzanine 
+
+08/26/19
+2019/08/23 	14:44:30
+rev 0x11
+Updated FB and XPT to support RGB12 tsi uhd/4k   
+
+09/16/19
+2019/09/12	17:57:31
+rev 0x12
+Latest FB updates 
+Added missing HDMI TX reset
+Updates TC readbacks
+Added 12 bit RGB Packed 
+
+09/23/19
+2019/09/20 	15:19:01
+rev 0x12
+Added routes from DLI2in to support new routing for RGB level A 
+
+10/15/19
+2019/10/15	01:46:38
+rev 0x12
+Fixes FB output limiting that caused errors in YC10/720p/2k
+Added AV sync control bits
+
+11/25/19
+2019/11/25 	12:27:12
+rev 0x13
+recompile with timing constraints adjusted to fix sdi2 rx SD
+
+Jan 26, 2020
+2020/01/24 	16:52:39
+Rev 0x15
+added audio engine mux for vu meters
+
+02/07/20
+2020/02/06	18:41:34
+rev 0x16
+fixed yc limiting out of FB
+
+Feb 10, 2020
+2020/02/07 15:56:43
+Rev 0x16
+moved vu meter input select to reg108[5]
+
+02/28/20
+2020/02/27 	20:15:16
+Rev 0x17
+added frame pulse reference select option controlled by reg 108
+
+03/17/20
+2020/03/16	19:12:31
+Rev 0x17
+synchronized h_pulse switching to keep Genlock from losing lock between sdi_in and freerun
+
+03/17/20
+2020/03/17	17:46:1
+Rev 0x17
+tied key c-channel output from mix and csc to 0x200
+
+03/23/20
+2020/03/23 	17:45:15
+Rev 0x17
+added sdi out4 debug information to reg 16
+
+03/25/20
+2020/03/24	19:06:06
+Rev 0x17
+Fixes output limiting no to limit VANC
+
+03/31/20
+2020/03/30	17:39:04	
+Rev 0x17
+Added free-run FP sync with current ref when FR not selected - improves switching time
+
+04/04/20
+2020/04/04 	09:59:03	
+Rev 0x17
+masked first h pulse after ref switch to force genlock into fastlock
+added a genlock reset triggered by software (reg48[6]) after loading the genlock
+moved the genlock locked bit to reg 48[7]
+replaced the genlock locked bit with the genlock reset reg48[31]
+changed video clock reset to trigger only on genlock reset
+requires driver changes made to toggle genlock init (reg48[6]) to trigger genlock reset after reprogramming
+
+04/07/20
+2020/04/07 	16:49:03
+Rev 0x17
+added genlock reset to QPLL and CPLL resets
+
+09/01/2020
+2020/08/31 	17:48:10
+rev 0x18
+added routing for TSI quad swap
+
+09/02/2020
+22020/09/01 	18:34:32
+rev 0x18
+added routing for TSI quad swap to HDMI out
+
+03/03/2021
+2021/03/03 	21:10:19
+rev 0x19
+fixed 12 bit RGB for HDMI Rx/Tx
+added fix RP188 latching for HFR YUV LevelB
+
+04/09/2021
+2021/04/09  	12:46:10
+rev 0x1a
+added down convert back in,  accidentally left out of previous build
+
+06/24/21
+2021/06/23 	23:53:02
+rev 0x1b
+Updated Frame Buffers to fix VANC shift in tall frames
+
+02/25/22
+2022/02/07   10:27:03
+rev 0x1f
+Fixed timing constraint for SDI1-RX that could cause SD not to work properly
+
+10/20/22
+2022/10/20 	12:24:55
+rev0x20
+Added in SDI statistic registers
+
+10/28/22
+2022/10/27	15:23:26
+rev0x21
+Masked VPID for HD and SD to RX re-timers to fix 10 bit full decode error.
+
+10/28/22
+2022/10/28 	13:58:11
+rev0x21
+Updated copy bit in VPID for 12G
+
+01/03/23
+2022/12/27 	13:37:30
+rev0x22
+Updated xref logic to improve SD xref lock
+updated SPI flash logic to support new flash devices
+
+02/09/23
+2023/02/09  14:06:53
+rev0x23
+updated SDI RX to avoid losing input on format switches
+added qualification on reset to audio capture to avoid reset when capture is enabled
+
+02/09/23
+2023/02/09  14:06:53
+rev0x23
+updated SDI RX to avoid losing input on format switches
+added qualification on reset to audio capture to avoid reset when capture is enabled
+
+02/10/23
+2023/02/10   18:27:36
+rev0x24
+updated SDI RX to fix SD that was broke in the previous check in.
+
+02/23/23
+2023/02/22   20:55:03
+rev0x24
+updated SDI RX to fix 12G that was broke in the previous check ins.
+
+03/06/2023
+2023/03/05 12:31:19
+rev 0x025
+Implemented LMH1983 circuit to generate clock27 for use when genlocked to analog reference input
+Added logic from Ha5-12G to generate 15,734 NTSC H from TMDS clock for when genlocked to HDMI input
+Added logic to drive genlock circuitry depending on what version of PCB is detected
+
+04/06/23
+2023/04/05 	22:47:52
+rev 0x025
+Changed XREF files back to support EL4511
+
+07/31/23
+2023/07/27  13:11:57
+rev 0x026
+fixed CSC key out limiting
+
+01/31/24
+2024/01/31	12:47:56
+rev 0x027
+moved ANC extract/insert into SDI i/o 
+updated 12G rate detect
+set VPID to 0 when not valid
+added audio copy suppress to output 3
+
+
+

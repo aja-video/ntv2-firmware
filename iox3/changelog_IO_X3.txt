@@ -1,0 +1,107 @@
+IO-X3 Change log
+
+2020-11-11
+	first set of firmware for IO-X3
+	PCIe endpoint and memory system working
+
+2020-11-18
+	working:
+		4x SDI input
+		4x SDI output
+		4x frame buffer
+		4xCSC
+		4xLUT
+		4x Dual Link In
+		4x Dual link out
+		genlock
+	not included:
+		HDMI input
+		HDMI output
+		all IO other than SDI
+	issues:
+		Sometimes the SDI transmitters need to be kicked to get them working by switching back and forth between 50 and 59.94 frame rates in the watcher.  
+		Audio is all hooked up but not working, I think we aren't pointing to the same address space.
+        
+2020-12-17
+    Everything functional (with rework tackies) on the -R0 board
+    
+2021-02-05
+    analog audio in working by enabled AXIS audio in audio engines (needs -R1 board or tacky on -R0 boards to connect ADC I2C lines)
+    correct sense of analog audio direction controls
+    power LED working with new scheme for displaying Tbt connectivity (needs -R1 LED board or reworked -R0)
+    slow driver rate to audio ADC to work with evaluation board tacked onto main PCB
+    force analog audio DAC into oversampling mode to reduce spurious noise and slightly decrease noise floor
+    
+2021-02-16
+    Update project for -R1 board
+    Moved SDI transceivers to different bank to allow tandem boot to function
+    re-ordered SDI ports
+    no debug ila or vio, no timing errors
+    
+2021-03-18
+    Corrected bug with SDI 3G level B
+    no debug ila or vio, no timing errors
+    
+2021-04-08
+    add missing crosspoint connection between the output of SDI in 4 and FB1 input
+    
+2022-03-02
+    rev 0x05
+    Added HDMI RX audio ch 3/4 swap disable
+
+2022-04-06
+    rev 0x06
+    Added memory reset to quad viewer to reset on restart
+
+2022-05-17
+    rev 0x07
+    Updated Quad Viewer to fix capture of interlaced formats(update to capture every frame)
+    
+2022-06-08
+    rev 0x08
+    fixed missing connection of analog video in to audio engines 2&3
+    
+10/28/22
+    2022/10/27 	13:49:46
+    rev0x9
+    Masked VPID for HD and SD to RX re-timers to fix 10 bit full decode error.
+
+08/08/23
+    2023/08/08  	14:14:48
+    rev0xb
+    Increased FB memory burst accesses to 4k from 2k
+    moved default MR address to use UHD FB 28-29
+    made mv FB start number writeable
+
+09/14/23
+    2023/09/14 	14:16:39
+    rev0xc
+    tied audio engine5 control reg bit 31 to readback 1 for 4 Meg audio buffer size
+    
+09/20/23
+    2023/09/19   	17:12:42
+    rev0xc
+    connected analog audio to system audio engine #5
+    changed SDI locked to mode locked of SDI core
+    
+09/21/23
+    2023/09/21   	16:31:19
+    rev0xc
+    changed SDI RX locked to mask rx data to avoid spurious TRS detect
+    
+09/28/23
+    2023/09/25   	10:18:49
+    rev0xc
+    changed SDI RX locked signal to what for valid format
+    
+12/07/23
+    2023/12/07   	17:52:54
+    rev0xe
+    added SDI RX timeout reset(rev0x0d)
+    fixed tx enable mask added in previous release that cause no SD error on output 4.
+    
+    
+    
+    
+
+    
