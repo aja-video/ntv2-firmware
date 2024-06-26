@@ -662,5 +662,10 @@ rev 0x028
 fixed ANC insert issue when sending null packets to field2 buffer 
 updated can_do to indicate HANC insertion capability
 
+06/26/24
+2024/06/26	15:03:50
+rev 0x029
+updated incorrect timestamp
+
 
 
