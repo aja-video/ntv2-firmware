@@ -100,7 +100,10 @@ IO-X3 Change log
     added SDI RX timeout reset(rev0x0d)
     fixed tx enable mask added in previous release that cause no SD error on output 4.
     
-    
+06/28/24
+    2024/06/28      08:40:06
+    rev 0xf
+    added pullup constraint to PCB_REV pins to correct for intermittant board ID readback errors which caused HDMI input to fail on -R3 hardware
     
     
 
