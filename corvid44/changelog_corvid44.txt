@@ -1,5 +1,12 @@
 Corvid 44 Change log
 
+Checkin Date – 06/20/24
+Bitfile time stamp - 2024/06/18  16:18:37
+Rev 2c
+removed pcie mod to bypass TXDETECTRX
+updated lane alignment state machine with AMD custom patch
+updated can_do to show mixer input delays.
+
 Checkin Date – 07/31/22
 Bitfile time stamp - 2023/07/26 09:34:39
 Rev 2b
