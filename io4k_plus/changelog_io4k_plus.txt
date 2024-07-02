@@ -656,5 +656,11 @@ updated 12G rate detect
 set VPID to 0 when not valid
 added audio copy suppress to output 3
 
+06/11/24
+2024/06/10     23:59:57
+rev 0x028
+fixed ANC insert issue when sending null packets to field2 buffer 
+updated can_do to indicate HANC insertion capability
+
 
 
