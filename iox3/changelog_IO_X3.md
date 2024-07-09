@@ -118,7 +118,7 @@ rev 0xe
 - added SDI RX timeout reset(rev0x0d)
 - fixed tx enable mask added in previous release that cause no SD error on output 4.
     
-## 06/28/24
+## 07/03/24
 
 rev 0xf
 
