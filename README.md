@@ -22,14 +22,14 @@ If you are a developer looking to get started with our products, consider enroll
 
 ## Popular Downloads
 - KONA X
- - [Retail "X"](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/konax/konax.bit?download=)
- - [Medical "XM"](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/konax/konaxm.bit?download=)
+   - [Retail "X"](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/konax/konax.bit?download=)
+   - [Medical "XM"](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/konax/konaxm.bit?download=)
 - KONA 5
- - [Retail](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/kona5/tprom/kona5_retail_tprom.bit?download=)
- - [8K](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/kona5/tprom/kona5_8k_tprom.bit?download=)
- - [2x4K](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/kona5/tprom/kona5_2x4k_tprom.bit?download=)
+   - [Retail](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/kona5/tprom/kona5_retail_tprom.bit?download=)
+   - [8K](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/kona5/tprom/kona5_8k_tprom.bit?download=)
+   - [2x4K](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/kona5/tprom/kona5_2x4k_tprom.bit?download=)
 - CORVID 44 12G
- - [8K](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/corvid44-12g/tprom/c44_12g_8k_tprom.bit?download=)
- - [8K MK (mixer keyer)](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/corvid44-12g/tprom/c44_12g_8k_mk_tprom.bit?download=)
- - [2x4K](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/corvid44-12g/tprom/c44_12g_2x4k_tprom.bit?download=)
- - [Planar](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/corvid44-12g/tprom/c44_12g_plnr_tprom.bit?download=)
+   - [8K](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/corvid44-12g/tprom/c44_12g_8k_tprom.bit?download=)
+   - [8K MK (mixer keyer)](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/corvid44-12g/tprom/c44_12g_8k_mk_tprom.bit?download=)
+   - [2x4K](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/corvid44-12g/tprom/c44_12g_2x4k_tprom.bit?download=)
+   - [Planar](https://github.com/aja-video/ntv2-firmware/raw/github-mirror/corvid44-12g/tprom/c44_12g_plnr_tprom.bit?download=)
