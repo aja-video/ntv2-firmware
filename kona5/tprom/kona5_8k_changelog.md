@@ -1,3 +1,10 @@
+# KONA 5 8K Change Log
+## Checkin Date 11/05/2024
+ 
+rev    0x1f
+
+ - Fixed ANC insert issue when sending null packets to field2 buffer updated can_do to indicate HANC insertion capability
+
 ### Version 0x1b — 01/03/2023 — kona5_8k_tprom_2023-01-03.bit
  - Fixed power-up audio hopping issue (issue #909)
  - Added audio copy bit to VPID in DS2-4 on 12G link

@@ -1,3 +1,11 @@
+# KONA 5 2x4K Change Log
+
+## Checkin Date 11/05/2024
+ 
+rev    0x15
+
+ - Fixed ANC insert issue when sending null packets to field2 buffer updated can_do to indicate HANC insertion capability
+
 ### Version 0x09 — 12/18/2021 c44_12g_2x4k_tprom_2021-12-18.bit
  - Fixed anc insert/extract memory address by expanding to 32 bits from 29
  - Removed CRC check in TRS detect logic (static)

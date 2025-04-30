@@ -1,3 +1,10 @@
+# KONA 5 Retail Change Log
+## Checkin Date 11/05/2024
+ 
+rev    0x1c
+
+ - Fixed ANC insert issue when sending null packets to field2 buffer updated can_do to indicate HANC insertion capability
+
 ### Version 0x18 — 01/04/2023 - kona5_retail_tprom_2023-01-04.bit
  - Fixed power-up audio hopping issue (issue #909)
  - Added audio copy bit to VPID in DS2-4 on 12G link
