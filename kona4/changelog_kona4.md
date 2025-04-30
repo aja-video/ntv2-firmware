@@ -1,5 +1,12 @@
 # Kona 4 Change log
 
+## Checkin Date 09/05/24
+Bitfile time stamp - 2024/09/05  11:53:48
+
+Rev 64
+
+- updated audio engine reset to fix channel hopping
+
 ## Checkin Date 07/31/22
 Bitfile time stamp - 2023/07/27	09:24:38
 
