@@ -1,5 +1,11 @@
 # KONA 5 2x4K Change Log
 
+## Checkin Date 12/06/2024
+
+rev 0x16
+
+- Updated anc extract to check buffer boundaries before writing to avoid writing beyond the end of the buffer
+
 ## Checkin Date 11/05/2024
  
 rev    0x15
