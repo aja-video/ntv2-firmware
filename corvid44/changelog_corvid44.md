@@ -1,5 +1,12 @@
 # Corvid 44 Change log
 
+## Checkin Date 09/27/24
+Bitfile time stamp - 2024/09/27   16:17:49
+
+Rev 2c
+
+- updated timestamp register
+
 ## Checkin Date 07/31/22
 Bitfile time stamp - 2023/07/26 09:34:39
 
