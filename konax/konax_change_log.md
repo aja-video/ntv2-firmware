@@ -1,5 +1,12 @@
 # KONA X Change Log
 
+## Checkin Date 10/25/2024
+bitfile timestamp 2024/10/24   13:00:32
+
+rev 0x05
+
+- Change to genlock SPI interface
+
 ## Checkin Date 06/11/2024
 bitfile timestamp 2024/06/11  	10:44:38
 
