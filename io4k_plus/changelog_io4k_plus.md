@@ -671,6 +671,10 @@ rev 0x029
 
 rev 0x2a
 
-- Fix HDMI Input issue on new board rev. 
+- Fix HDMI Input issue on new board rev.
+
+## 02/18/25
+
+- correct date and timestamp, no functional change to firmware  
 
 EoF
