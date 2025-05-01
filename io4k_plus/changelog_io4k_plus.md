@@ -667,4 +667,10 @@ rev 0x029
 
 - updated incorrect timestamp
 
+## 02/02/2025
+
+rev 0x2a
+
+- Fix HDMI Input issue on new board rev. 
+
 EoF
