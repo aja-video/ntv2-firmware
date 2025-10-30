@@ -1,5 +1,12 @@
 # Corvid 88 Change log
 
+## Checkin Date 03/01/2024
+Bitfile time stamp - 2024/02/23 08:55:55
+
+Rev 4c
+
+- Added SDI RX reset watchdog
+
 ## Checkin Date 07/31/22
 Bitfile time stamp - 2023/07/18 12:02:02
 
