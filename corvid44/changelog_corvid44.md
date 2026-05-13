@@ -1,5 +1,12 @@
 # Corvid 44 Change log
 
+## Checkin Date 10/23/2025
+Bitfile time stamp - 2025/10/22 10:28:36
+
+Rev 2d
+
+- Added ARGB10 pixel format
+
 ## Checkin Date 09/27/24
 Bitfile time stamp - 2024/09/27   16:17:49
 

@@ -675,6 +675,13 @@ rev 0x2a
 
 ## 02/18/25
 
-- correct date and timestamp, no functional change to firmware  
+- correct date and timestamp, no functional change to firmware
+
+## 01/06/2026
+Bitfile time stamp - 2025/12/18 17:47:25
+
+rev 0x2b
+
+- Fixed ANC insertion regression introduced in rev 0x2a
 
 EoF

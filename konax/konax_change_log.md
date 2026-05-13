@@ -1,5 +1,13 @@
 # KONA X Change Log
 
+## Checkin Date 01/12/2026
+bitfile timestamp 2026/01/12 10:17:43
+
+rev 0x08
+
+- Added PCI link speed and lane width reporting to CSI registers
+- Added firmware revision to CSI registers
+
 ## Checkin Date 10/25/2024
 bitfile timestamp 2024/10/24   13:00:32
 

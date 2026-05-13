@@ -123,5 +123,12 @@ rev 0xe
 rev 0xf
 
 - added pullup constraint to PCB_REV pins to correct for intermittant board ID readback errors which caused HDMI input to fail on -R3 hardware
-    
+
+## 03/21/2025
+Bitfile time stamp - 2025/03/20 12:21:43
+
+rev 0x10
+
+- Moved fb4 level B bit to enable 2-wire dual link from FB3/4 to outputs 3/4
+
 EoF    

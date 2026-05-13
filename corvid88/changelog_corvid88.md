@@ -1,5 +1,12 @@
 # Corvid 88 Change log
 
+## Checkin Date 10/23/2025
+Bitfile time stamp - 2025/10/22 09:39:39
+
+Rev 4f
+
+- Added ARGB10 pixel format
+
 ## Checkin Date 03/01/2024
 Bitfile time stamp - 2024/02/23 08:55:55
 
